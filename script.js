@@ -39,7 +39,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-currentDate.innerHTML = `${day} ${month} ${date}, ${hour}:${minutes}`;
+currentDate.innerHTML = `${day}, ${month}, ${date}, ${hour}:${minutes}`;
 
 //City Lookup
 let form = document.querySelector("#search-city");
@@ -79,8 +79,8 @@ function displayCurrentTemp(response) {
 }
 
 function currentPingLocation(position) {
-  let apiKey = "48bfbdd47439302d4823e096b598aab9";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "t016074fb65443606obfa1c77473d7be";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
   console.log(apiUrl);
 
   axios.get(apiUrl).then(displayWeather);
