@@ -32,7 +32,7 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let hour = now.getHours();
 if (hour < 10) {
-  hour = `0${hour}`;
+  hour = `0 ${hour}`;
 }
 let minutes = now.getMinutes();
 if (minutes < 10) {
@@ -72,7 +72,7 @@ function displayWeather(response) {
 function displayCurrentTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
-  let h1 = document.querySelector("span#temperature");
+  let h1 = document.querySelector("#temperature");
   h1.innerHTML = `${temperature}`;
   let citySearch = document.querySelector("#location-entered");
   citySearch.innerHTML = `${city}`;
@@ -97,13 +97,13 @@ currentButton.addEventListener("click", getCurrentLocation);
 function converttoFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.inerHTML = 75;
+  temperature.innerHTML = "";
 }
 
 function converttoCelsius(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 24;
+  temperature.innerHTML = "";
 }
 
 let fahrenheitLink = document.querySelector("#current-temp-fahrenheit");
